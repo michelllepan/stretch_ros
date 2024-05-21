@@ -12,7 +12,7 @@ from trajectory_msgs.msg import JointTrajectoryPoint
 from command_groups import HeadPanCommandGroup, HeadTiltCommandGroup, \
                            WristYawCommandGroup, GripperCommandGroup, \
                            ArmCommandGroup, LiftCommandGroup, \
-                           MobileBaseCommandGroup
+                           MobileBaseCommandGroup, WristPitchCommandGroup, WristRollCommandGroup
 
 
 class JointTrajectoryAction:
@@ -34,19 +34,18 @@ class JointTrajectoryAction:
             if 'wrist_yaw' in self.node.robot.end_of_arm.joints else None
         self.gripper_cg = GripperCommandGroup(node=self.node) \
             if 'stretch_gripper' in self.node.robot.end_of_arm.joints else None
+
+        self.wrist_pitch_cg = WristPitchCommandGroup(node=self.node) \
+            if 'wrist_pitch' in self.node.robot.end_of_arm.joints else None
+        self.wrist_roll_cg = WristRollCommandGroup(node=self.node) \
+            if 'wrist_roll' in self.node.robot.end_of_arm.joints else None
+        
         self.arm_cg = ArmCommandGroup(node=self.node)
         self.lift_cg = LiftCommandGroup(node=self.node)
         self.mobile_base_cg = MobileBaseCommandGroup(node=self.node)
         self.command_groups = [self.arm_cg, self.lift_cg, self.mobile_base_cg, self.head_pan_cg,
-                               self.head_tilt_cg, self.wrist_yaw_cg, self.gripper_cg]
+                               self.head_tilt_cg, self.wrist_yaw_cg, self.gripper_cg, self.wrist_pitch_cg, self.wrist_roll_cg]
         self.command_groups = [cg for cg in self.command_groups if cg is not None]
-
-        for joint in self.node.robot.end_of_arm.joints:
-            module_name = self.node.robot.end_of_arm.params['devices'][joint].get('ros_py_module_name')
-            class_name = self.node.robot.end_of_arm.params['devices'][joint].get('ros_py_class_name')
-            if module_name and class_name:
-                endofarm_cg = getattr(importlib.import_module(module_name), class_name)(node=self.node)
-                self.command_groups.append(endofarm_cg)
 
 
     def execute_cb(self, goal):
