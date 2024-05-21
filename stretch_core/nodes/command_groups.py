@@ -168,8 +168,8 @@ class WristPitchCommandGroup(SimpleCommandGroup):
         return None
 
     def joint_state(self, robot_status, **kwargs):
-        yaw_status = robot_status['end_of_arm']['wrist_pitch']
-        return (yaw_status['pos'], yaw_status['vel'], yaw_status['effort'])
+        pitch_status = robot_status['end_of_arm']['wrist_pitch']
+        return (pitch_status['pos'], pitch_status['vel'], pitch_status['effort'])
     
 
 class WristRollCommandGroup(SimpleCommandGroup):
@@ -204,8 +204,8 @@ class WristRollCommandGroup(SimpleCommandGroup):
         return None
 
     def joint_state(self, robot_status, **kwargs):
-        yaw_status = robot_status['end_of_arm']['wrist_roll']
-        return (yaw_status['pos'], yaw_status['vel'], yaw_status['effort'])
+        roll_status = robot_status['end_of_arm']['wrist_roll']
+        return (roll_status['pos'], roll_status['vel'], roll_status['effort'])
 
 
 class GripperCommandGroup(SimpleCommandGroup):
