@@ -44,7 +44,7 @@ class JointTrajectoryAction:
         self.lift_cg = LiftCommandGroup(node=self.node)
         self.mobile_base_cg = MobileBaseCommandGroup(node=self.node)
         self.command_groups = [self.arm_cg, self.lift_cg, self.mobile_base_cg, self.head_pan_cg,
-                               self.head_tilt_cg, self.wrist_yaw_cg, self.gripper_cg]
+                               self.head_tilt_cg, self.wrist_yaw_cg, self.gripper_cg, self.wrist_pitch_cg, self.wrist_roll_cg]
         self.command_groups = [cg for cg in self.command_groups if cg is not None]
 
 
