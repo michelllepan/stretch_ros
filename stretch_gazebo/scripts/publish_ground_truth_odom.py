@@ -19,7 +19,7 @@ odom=Odometry()
 header = Header()
 header.frame_id='/ground_truth'
 model = GetModelStateRequest()
-model.model_name='robot1'
+model.model_name='robot_1'
 models = []
 r = rospy.Rate(20)
 

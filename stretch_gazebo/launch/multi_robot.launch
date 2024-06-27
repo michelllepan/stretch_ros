@@ -14,7 +14,7 @@
 
       <!-- push robot_description to factory and spawn robot in gazebo -->
       <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model"
-            args=" -urdf -model robot1 -param robot_description -J joint_lift 0.2 -J joint_wrist_yaw 3.14" respawn="false" output="screen" />
+            args=" -urdf -model robot_1 -param robot_description -J joint_lift 0.2 -J joint_wrist_yaw 3.14" respawn="false" output="screen" />
 
       <node pkg="robot_state_publisher" type="robot_state_publisher"  name="robot_state_publisher">
       <param name="publish_frequency" type="double" value="30.0" />
@@ -22,25 +22,12 @@
 
       <!-- <node name="rviz" pkg="rviz" type="rviz" args="-d $(find stretch_gazebo)/config/sim.rviz" if="$(arg rviz)"/> -->
 
-      <rosparam command="load"
-                  file="$(find stretch_gazebo)/config/joints.yaml"
-                  ns="stretch_joint_state_controller" />
-
-      <rosparam command="load"
-                  file="$(find stretch_gazebo)/config/drive_config.yaml"
-                  ns="stretch_diff_drive_controller" />
-
-      <rosparam command="load"
-                  file="$(find stretch_gazebo)/config/arm.yaml"/>
-
-      <rosparam command="load"
-                  file="$(find stretch_gazebo)/config/head.yaml" />
-
-      <rosparam command="load"
-                  file="$(find stretch_gazebo)/config/gripper.yaml" />
-
-      <rosparam command="load"
-            file="$(find stretch_gazebo)/config/dex_wrist.yaml" if="$(arg dex_wrist)"/>
+      <rosparam command="load" file="$(find stretch_gazebo)/config/joints.yaml" ns="stretch_joint_state_controller" />
+      <rosparam command="load" file="$(find stretch_gazebo)/config/drive_config.yaml" ns="stretch_diff_drive_controller" />
+      <rosparam command="load" file="$(find stretch_gazebo)/config/arm.yaml"/>
+      <rosparam command="load" file="$(find stretch_gazebo)/config/head.yaml" />
+      <rosparam command="load" file="$(find stretch_gazebo)/config/gripper.yaml" />
+      <rosparam command="load" file="$(find stretch_gazebo)/config/dex_wrist.yaml" if="$(arg dex_wrist)"/>
 
       <node name="stretch_controller_spawner" pkg="controller_manager" type="spawner"
             args="stretch_joint_state_controller stretch_diff_drive_controller stretch_arm_controller stretch_head_controller stretch_gripper_controller"
@@ -48,7 +35,7 @@
 
       <node name="stretch_controller_spawner" pkg="controller_manager" type="spawner"
             args="stretch_joint_state_controller stretch_diff_drive_controller stretch_arm_controller stretch_head_controller stretch_gripper_controller stretch_dex_wrist_controller"
-      if="$(arg dex_wrist)"/>
+            if="$(arg dex_wrist)"/>
 
       <node name="publish_ground_truth_odom" pkg="stretch_gazebo" type="publish_ground_truth_odom.py" output="screen"/>
 
@@ -60,7 +47,7 @@
 
       <!-- push robot_description to factory and spawn robot in gazebo -->
       <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model"
-            args=" -urdf -model robot2 -param robot_description -J joint_lift 0.2 -J joint_wrist_yaw 3.14 -x 1.0 -y 0.0" respawn="false" output="screen" />
+            args=" -urdf -model robot_2 -param robot_description -J joint_lift 0.2 -J joint_wrist_yaw 3.14 -x 1.0 -y 0.0" respawn="false" output="screen" />
 
       <node pkg="robot_state_publisher" type="robot_state_publisher"  name="robot_state_publisher">
       <param name="publish_frequency" type="double" value="30.0" />
@@ -68,25 +55,12 @@
 
       <!-- <node name="rviz" pkg="rviz" type="rviz" args="-d $(find stretch_gazebo)/config/sim.rviz" if="$(arg rviz)"/> -->
 
-      <rosparam command="load"
-                  file="$(find stretch_gazebo)/config/joints.yaml"
-                  ns="stretch_joint_state_controller" />
-
-      <rosparam command="load"
-                  file="$(find stretch_gazebo)/config/drive_config.yaml"
-                  ns="stretch_diff_drive_controller" />
-
-      <rosparam command="load"
-                  file="$(find stretch_gazebo)/config/arm.yaml"/>
-
-      <rosparam command="load"
-                  file="$(find stretch_gazebo)/config/head.yaml" />
-
-      <rosparam command="load"
-                  file="$(find stretch_gazebo)/config/gripper.yaml" />
-
-      <rosparam command="load"
-            file="$(find stretch_gazebo)/config/dex_wrist.yaml" if="$(arg dex_wrist)"/>
+      <rosparam command="load" file="$(find stretch_gazebo)/config/joints.yaml" ns="stretch_joint_state_controller" />
+      <rosparam command="load" file="$(find stretch_gazebo)/config/drive_config.yaml" ns="stretch_diff_drive_controller" />
+      <rosparam command="load" file="$(find stretch_gazebo)/config/arm.yaml"/>
+      <rosparam command="load" file="$(find stretch_gazebo)/config/head.yaml" />
+      <rosparam command="load" file="$(find stretch_gazebo)/config/gripper.yaml" />
+      <rosparam command="load" file="$(find stretch_gazebo)/config/dex_wrist.yaml" if="$(arg dex_wrist)"/>
 
       <node name="stretch_controller_spawner" pkg="controller_manager" type="spawner"
             args="stretch_joint_state_controller stretch_diff_drive_controller stretch_arm_controller stretch_head_controller stretch_gripper_controller"
@@ -94,7 +68,7 @@
 
       <node name="stretch_controller_spawner" pkg="controller_manager" type="spawner"
             args="stretch_joint_state_controller stretch_diff_drive_controller stretch_arm_controller stretch_head_controller stretch_gripper_controller stretch_dex_wrist_controller"
-      if="$(arg dex_wrist)"/>
+            if="$(arg dex_wrist)"/>
 
       <node name="publish_ground_truth_odom" pkg="stretch_gazebo" type="publish_ground_truth_odom2.py" output="screen"/>
 
