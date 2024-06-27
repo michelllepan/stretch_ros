@@ -10,8 +10,8 @@
 
   <group ns="robot_1">
   
-      <param name="robot_num" type="int" value="1" />
-      <param name="robot_description" command="$(find xacro)/xacro $(arg model) gpu_lidar:=$(arg gpu_lidar) visualize_lidar:=$(arg visualize_lidar) robot_num:=1"/>
+      <param name="model_name" value="robot_1"/>
+      <param name="robot_description" command="$(find xacro)/xacro $(arg model) gpu_lidar:=$(arg gpu_lidar) visualize_lidar:=$(arg visualize_lidar) namespace:=robot_1"/>
 
       <!-- push robot_description to factory and spawn robot in gazebo -->
       <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model"
@@ -38,18 +38,18 @@
             args="stretch_joint_state_controller stretch_diff_drive_controller stretch_arm_controller stretch_head_controller stretch_gripper_controller stretch_dex_wrist_controller"
             if="$(arg dex_wrist)"/>
 
-      <node name="publish_ground_truth_odom" pkg="stretch_gazebo" type="publish_ground_truth_odom.py" output="screen"/>
+      <node name="publish_ground_truth_odom" pkg="stretch_gazebo" type="publish_ground_truth_odom.py" output="screen" />
 
   </group>
 
   <group ns="robot_2">
   
-      <param name="robot_num" type="int" value="2" />
-      <param name="robot_description" command="$(find xacro)/xacro $(arg model) gpu_lidar:=$(arg gpu_lidar) visualize_lidar:=$(arg visualize_lidar) robot_num:=2"/>
+      <param name="model_name" value="robot_2"/>
+      <param name="robot_description" command="$(find xacro)/xacro $(arg model) gpu_lidar:=$(arg gpu_lidar) visualize_lidar:=$(arg visualize_lidar) namespace:=robot_2"/>
 
       <!-- push robot_description to factory and spawn robot in gazebo -->
       <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model"
-            args=" -urdf -model robot_2 -param robot_description -J joint_lift 0.2 -J joint_wrist_yaw 3.14 -x 1.0 -y 0.0" respawn="false" output="screen" />
+            args=" -urdf -model robot_2 -param robot_description -J joint_lift 0.2 -J joint_wrist_yaw 3.14 -x 0.0 -y 1.0" respawn="false" output="screen" />
 
       <node pkg="robot_state_publisher" type="robot_state_publisher"  name="robot_state_publisher">
             <param name="publish_frequency" type="double" value="30.0" />
@@ -72,7 +72,7 @@
             args="stretch_joint_state_controller stretch_diff_drive_controller stretch_arm_controller stretch_head_controller stretch_gripper_controller stretch_dex_wrist_controller"
             if="$(arg dex_wrist)"/>
 
-      <node name="publish_ground_truth_odom" pkg="stretch_gazebo" type="publish_ground_truth_odom.py" output="screen"/>
+      <node name="publish_ground_truth_odom" pkg="stretch_gazebo" type="publish_ground_truth_odom.py" output="screen" />
 
   </group>
 
