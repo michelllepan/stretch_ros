@@ -5,10 +5,9 @@
   <arg name="dex_wrist" default="false"/>
   <param name="stretch_gazebo/dex_wrist" type="bool" value="$(arg dex_wrist)"/>
 
-  <arg name="model" value="$(find stretch_gazebo)/urdf/stretch_gazebo_standard_gripper.urdf.xacro" unless="$(arg dex_wrist)"/>
-  <arg name="model" value="$(find stretch_gazebo)/urdf/stretch_gazebo_dex_wrist.urdf.xacro" if="$(arg dex_wrist)"/>
-
   <group ns="robot_1">
+      <arg name="model" value="$(find stretch_gazebo)/urdf/robot_1/stretch_gazebo_standard_gripper.urdf.xacro" unless="$(arg dex_wrist)"/>
+      <arg name="model" value="$(find stretch_gazebo)/urdf/robot_1/stretch_gazebo_dex_wrist.urdf.xacro" if="$(arg dex_wrist)"/>
   
       <param name="model_name" value="robot_1"/>
       <param name="robot_description" command="$(find xacro)/xacro $(arg model) gpu_lidar:=$(arg gpu_lidar) visualize_lidar:=$(arg visualize_lidar) namespace:=robot_1"/>
@@ -19,40 +18,7 @@
 
       <node pkg="robot_state_publisher" type="robot_state_publisher"  name="robot_state_publisher">
             <param name="publish_frequency" type="double" value="30.0" />
-      </node>
-
-      <!-- <node name="rviz" pkg="rviz" type="rviz" args="-d $(find stretch_gazebo)/config/sim.rviz" if="$(arg rviz)"/> -->
-
-      <rosparam command="load" file="$(find stretch_gazebo)/config/joints.yaml" ns="stretch_joint_state_controller" />
-      <rosparam command="load" file="$(find stretch_gazebo)/config/drive_config.yaml" ns="stretch_diff_drive_controller" />
-      <rosparam command="load" file="$(find stretch_gazebo)/config/arm.yaml"/>
-      <rosparam command="load" file="$(find stretch_gazebo)/config/head.yaml" />
-      <rosparam command="load" file="$(find stretch_gazebo)/config/gripper.yaml" />
-      <rosparam command="load" file="$(find stretch_gazebo)/config/dex_wrist.yaml" if="$(arg dex_wrist)"/>
-
-      <node name="stretch_controller_spawner" pkg="controller_manager" type="spawner"
-            args="stretch_joint_state_controller stretch_diff_drive_controller stretch_arm_controller stretch_head_controller stretch_gripper_controller"
-            unless="$(arg dex_wrist)"/>
-
-      <node name="stretch_controller_spawner" pkg="controller_manager" type="spawner"
-            args="stretch_joint_state_controller stretch_diff_drive_controller stretch_arm_controller stretch_head_controller stretch_gripper_controller stretch_dex_wrist_controller"
-            if="$(arg dex_wrist)"/>
-
-      <node name="publish_ground_truth_odom" pkg="stretch_gazebo" type="publish_ground_truth_odom.py" output="screen" />
-
-  </group>
-
-  <group ns="robot_2">
-  
-      <param name="model_name" value="robot_2"/>
-      <param name="robot_description" command="$(find xacro)/xacro $(arg model) gpu_lidar:=$(arg gpu_lidar) visualize_lidar:=$(arg visualize_lidar) namespace:=robot_2"/>
-
-      <!-- push robot_description to factory and spawn robot in gazebo -->
-      <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model"
-            args=" -urdf -model robot_2 -param robot_description -J joint_lift 0.2 -J joint_wrist_yaw 3.14 -x 0.0 -y 1.0" respawn="false" output="screen" />
-
-      <node pkg="robot_state_publisher" type="robot_state_publisher"  name="robot_state_publisher">
-            <param name="publish_frequency" type="double" value="30.0" />
+            <!-- <param name="tf_prefix" value="one" /> -->
       </node>
 
       <!-- <node name="rviz" pkg="rviz" type="rviz" args="-d $(find stretch_gazebo)/config/sim.rviz" if="$(arg rviz)"/> -->
