@@ -272,7 +272,7 @@
     <limit effort="100" lower="-0.6" upper="0.6" velocity="1.0"/>
   </joint>
   <link
-    name="link_gripper_fingertip_right">
+    name="robot_3/link_gripper_fingertip_right">
     <inertial>
       <origin
         xyz="2.83785970833783E-08 6.75131661687089E-09 0.00812578923434215"
@@ -320,7 +320,7 @@
     <parent
       link="robot_3/link_gripper_finger_right" />
     <child
-      link="link_gripper_fingertip_right" />
+      link="robot_3/link_gripper_fingertip_right" />
     <axis
       xyz="0 0 0" />
   </joint>
@@ -379,7 +379,7 @@
     <limit effort="100" lower="-0.6" upper="0.6" velocity="1.0"/>
   </joint>
   <link
-    name="link_gripper_fingertip_left">
+    name="robot_3/link_gripper_fingertip_left">
     <inertial>
       <origin
         xyz="-2.59496317767116E-08 -6.65612598371723E-09 0.00812579036862837"
@@ -427,13 +427,13 @@
     <parent
       link="robot_3/link_gripper_finger_left" />
     <child
-      link="link_gripper_fingertip_left" />
+      link="robot_3/link_gripper_fingertip_left" />
     <axis
       xyz="0 0 0" />
   </joint>
 
   <link
-      name="link_grasp_center">
+      name="robot_3/link_grasp_center">
   </link>
 
   <joint
@@ -445,7 +445,7 @@
     <parent
       link="link_straight_gripper" />
     <child
-      link="link_grasp_center" />
+      link="robot_3/link_grasp_center" />
   </joint>
 
 </robot>

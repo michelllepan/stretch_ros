@@ -211,7 +211,7 @@
   </joint>
 
   <link
-    name="link_mast">
+    name="robot_3/link_mast">
     <inertial>
       <origin
         xyz="2.0817E-17 0.7075 -2.7756E-17"
@@ -260,7 +260,7 @@
     <parent
       link="robot_3/base_link" />
     <child
-      link="link_mast" />
+      link="robot_3/link_mast" />
     <axis
       xyz="0 0 0" />
   </joint>
@@ -313,7 +313,7 @@
       xyz="-0.037385 0.1666 0"
       rpy="-1.5708 1.5708 0" />
     <parent
-      link="link_mast" />
+      link="robot_3/link_mast" />
     <child
       link="robot_3/link_lift" />
     <axis
@@ -325,7 +325,7 @@
   </joint>
 
   <link
-    name="link_arm_l4">
+    name="robot_3/link_arm_l4">
     <inertial>
       <origin
         xyz="-1.0146E-06 -1.9719E-05 -0.094738"
@@ -374,7 +374,7 @@
     <parent
       link="robot_3/link_lift" />
     <child
-      link="link_arm_l4" />
+      link="robot_3/link_arm_l4" />
     <axis
       xyz="0 0 0" />
   </joint>
@@ -427,7 +427,7 @@
       xyz="0 0 0.013"
       rpy="7.68831233799385E-30 2.36716479416092E-30 2.29652732251143E-17" />
     <parent
-      link="link_arm_l4" />
+      link="robot_3/link_arm_l4" />
     <child
       link="robot_3/link_arm_l3" />
     <axis
@@ -670,7 +670,7 @@
   </joint>
 
   <link
-    name="link_head">
+    name="robot_3/link_head">
     <inertial>
       <origin
         xyz="0.0406850995527703 0.0396956343318414 0.0226500246461012"
@@ -717,9 +717,9 @@
       xyz="0 1.33 0"
       rpy="1.5707963267949 -1.5707963267949 3.1416" />
     <parent
-      link="link_mast" />
+      link="robot_3/link_mast" />
     <child
-      link="link_head" />
+      link="robot_3/link_head" />
     <axis
       xyz="0 0 0" />
   </joint>
@@ -772,7 +772,7 @@
       xyz="0.135 0.0731000000000001 -0.00319621125547975"
       rpy="0 0 1.5707963267949" />
     <parent
-      link="link_head" />
+      link="robot_3/link_head" />
     <child
       link="robot_3/link_head_pan" />
     <axis

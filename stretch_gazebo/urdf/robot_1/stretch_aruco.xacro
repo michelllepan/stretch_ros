@@ -2,7 +2,7 @@
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="stretch_aruco">
 
   <link
-    name="link_aruco_right_base">
+    name="robot_1/link_aruco_right_base">
     <inertial>
       <origin
         xyz="1.3878E-17 0 -0.000125"
@@ -51,14 +51,14 @@
     <parent
       link="robot_1/base_link" />
     <child
-      link="link_aruco_right_base" />
+      link="robot_1/link_aruco_right_base" />
     <axis
       xyz="0 0 0" />
   </joint>
 
   
   <link
-    name="link_aruco_left_base">
+    name="robot_1/link_aruco_left_base">
     <inertial>
       <origin
         xyz="2.7756E-17 0 -0.000125"
@@ -107,13 +107,13 @@
     <parent
       link="robot_1/base_link" />
     <child
-      link="link_aruco_left_base" />
+      link="robot_1/link_aruco_left_base" />
     <axis
       xyz="0 0 0" />
   </joint>
   
   <link
-    name="link_aruco_shoulder">
+    name="robot_1/link_aruco_shoulder">
     <inertial>
       <origin
         xyz="-2.77555756156289E-17 2.56739074444567E-16 -0.000125000000000042"
@@ -162,13 +162,13 @@
     <parent
       link="robot_1/link_lift" />
     <child
-      link="link_aruco_shoulder" />
+      link="robot_1/link_aruco_shoulder" />
     <axis
       xyz="0 0 0" />
   </joint>
 
   <link
-    name="link_aruco_top_wrist">
+    name="robot_1/link_aruco_top_wrist">
     <inertial>
       <origin
         xyz="-1.3531E-15 -3.4972E-15 -0.000125"
@@ -217,13 +217,13 @@
     <parent
       link="robot_1/link_arm_l0" />
     <child
-      link="link_aruco_top_wrist" />
+      link="robot_1/link_aruco_top_wrist" />
     <axis
       xyz="0 0 0" />
   </joint>
 
   <link
-    name="link_aruco_inner_wrist">
+    name="robot_1/link_aruco_inner_wrist">
     <inertial>
       <origin
         xyz="8.32667268468867E-17 1.77635683940025E-15 -0.000125000000000264"
@@ -272,7 +272,7 @@
     <parent
       link="robot_1/link_arm_l0" />
     <child
-      link="link_aruco_inner_wrist" />
+      link="robot_1/link_aruco_inner_wrist" />
     <axis
       xyz="0 0 0" />
   </joint>

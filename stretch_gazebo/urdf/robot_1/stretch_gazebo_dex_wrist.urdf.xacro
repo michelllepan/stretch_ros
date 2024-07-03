@@ -4,12 +4,12 @@
   <xacro:arg name="visualize_lidar" default="false" />
   <xacro:arg name="robot_num" default="1" />
 
-  <xacro:include filename="$(find stretch_gazebo)/urdf/robot_2/stretch_main.xacro" />
-  <xacro:include filename="$(find stretch_gazebo)/urdf/robot_2/stretch_aruco.xacro" />
-  <xacro:include filename="$(find stretch_gazebo)/urdf/robot_2/stretch_d435i.xacro" />
-  <xacro:include filename="$(find stretch_gazebo)/urdf/robot_2/stretch_laser_range_finder.xacro" />
-  <xacro:include filename="$(find stretch_gazebo)/urdf/robot_2/stretch_respeaker.xacro" />
-  <xacro:include filename="$(find stretch_gazebo)/urdf/robot_2/stretch_dex_wrist.xacro" />
+  <xacro:include filename="$(find stretch_gazebo)/urdf/robot_1/stretch_main.xacro" />
+  <xacro:include filename="$(find stretch_gazebo)/urdf/robot_1/stretch_aruco.xacro" />
+  <xacro:include filename="$(find stretch_gazebo)/urdf/robot_1/stretch_d435i.xacro" />
+  <xacro:include filename="$(find stretch_gazebo)/urdf/robot_1/stretch_laser_range_finder.xacro" />
+  <xacro:include filename="$(find stretch_gazebo)/urdf/robot_1/stretch_respeaker.xacro" />
+  <xacro:include filename="$(find stretch_gazebo)/urdf/robot_1/stretch_dex_wrist.xacro" />
 
   <gazebo>
     <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
@@ -18,7 +18,7 @@
   </gazebo>
 
   <!-- Base and Drive -->
-  <gazebo reference="robot_2/base_link">
+  <gazebo reference="robot_1/base_link">
       <material>Gazebo/Gray</material>
   </gazebo>
 
@@ -175,40 +175,40 @@
         <depthUpdateRate>30</depthUpdateRate>
         <colorUpdateRate>30</colorUpdateRate>
         <infraredUpdateRate>30</infraredUpdateRate>
-        <depthTopicName>depth/image_raw</depthTopicName>
-        <depthCameraInfoTopicName>depth/camera_info</depthCameraInfoTopicName>
-        <colorTopicName>color/image_raw</colorTopicName>
-        <colorCameraInfoTopicName>color/camera_info</colorCameraInfoTopicName>
-        <infrared1TopicName>infrared/image_raw</infrared1TopicName>
-        <infrared1CameraInfoTopicName>infrared/camera_info</infrared1CameraInfoTopicName>
-        <infrared2TopicName>infrared2/image_raw</infrared2TopicName>
-        <infrared2CameraInfoTopicName>infrared2/camera_info</infrared2CameraInfoTopicName>
-        <colorOpticalframeName>camera_color_optical_frame</colorOpticalframeName>
-        <depthOpticalframeName>camera_depth_optical_frame</depthOpticalframeName>
-        <infrared1OpticalframeName>camera_left_ir_optical_frame</infrared1OpticalframeName>
-        <infrared2OpticalframeName>camera_right_ir_optical_frame</infrared2OpticalframeName>
+        <depthTopicName>robot_1/depth/image_raw</depthTopicName>
+        <depthCameraInfoTopicName>robot_1/depth/camera_info</depthCameraInfoTopicName>
+        <colorTopicName>robot_1/color/image_raw</colorTopicName>
+        <colorCameraInfoTopicName>robot_1/color/camera_info</colorCameraInfoTopicName>
+        <infrared1TopicName>robot_1/infrared/image_raw</infrared1TopicName>
+        <infrared1CameraInfoTopicName>robot_1/infrared/camera_info</infrared1CameraInfoTopicName>
+        <infrared2TopicName>robot_1/infrared2/image_raw</infrared2TopicName>
+        <infrared2CameraInfoTopicName>robot_1/infrared2/camera_info</infrared2CameraInfoTopicName>
+        <colorOpticalframeName>robot_1/camera_color_optical_frame</colorOpticalframeName>
+        <depthOpticalframeName>robot_1/camera_depth_optical_frame</depthOpticalframeName>
+        <infrared1OpticalframeName>robot_1/camera_left_ir_optical_frame</infrared1OpticalframeName>
+        <infrared2OpticalframeName>robot_1/camera_right_ir_optical_frame</infrared2OpticalframeName>
         <rangeMinDepth>0.1</rangeMinDepth>
         <rangeMaxDepth>10</rangeMaxDepth>
         <pointCloud>1</pointCloud>
-        <pointCloudTopicName>depth/color/points</pointCloudTopicName>
+        <pointCloudTopicName>robot_1/depth/color/points</pointCloudTopicName>
         <pointCloudCutoff>0.15</pointCloudCutoff>
         <pointCloudCutoffMax>10</pointCloudCutoffMax>
       </plugin>
   </gazebo>
 
-  <gazebo reference="camera_gyro_frame">
+  <gazebo reference="robot_1/camera_gyro_frame">
     <gravity>true</gravity>
     <sensor name="imu_sensor" type="imu">
       <always_on>true</always_on>
       <visualize>false</visualize>
       <plugin name="imu_plugin" filename="libgazebo_ros_imu_sensor.so">
-        <topicName>camera/imu/data</topicName>
-        <bodyName>camera_gyro_frame</bodyName>
+        <topicName>robot_1/camera/imu/data</topicName>
+        <bodyName>robot_1/camera_gyro_frame</bodyName>
         <updateRateHZ>50.0</updateRateHZ>
         <gaussianNoise>0.001</gaussianNoise>
         <xyzOffset>0 0 0</xyzOffset>
         <rpyOffset>0 0 0</rpyOffset>
-        <frameName>camera_gyro_frame</frameName>
+        <frameName>robot_1/camera_gyro_frame</frameName>
         <initialOrientationAsReference>false</initialOrientationAsReference>
       </plugin>
       <pose>0 0 0 0 0 0</pose>
@@ -216,23 +216,23 @@
   </gazebo>
 
   <!-- Aruco -->
-  <gazebo reference="link_aruco_right_base">
+  <gazebo reference="robot_1/link_aruco_right_base">
       <material>Gazebo/Black</material>
   </gazebo>
 
-  <gazebo reference="link_aruco_left_base">
+  <gazebo reference="robot_1/link_aruco_left_base">
       <material>Gazebo/Black</material>
   </gazebo>
 
-  <gazebo reference="link_aruco_shoulder">
+  <gazebo reference="robot_1/link_aruco_shoulder">
       <material>Gazebo/Black</material>
   </gazebo>
 
-  <gazebo reference="link_aruco_top_wrist">
+  <gazebo reference="robot_1/link_aruco_top_wrist">
       <material>Gazebo/Black</material>
   </gazebo>
 
-  <gazebo reference="link_aruco_inner_wrist">
+  <gazebo reference="robot_1/link_aruco_inner_wrist">
       <material>Gazebo/Black</material>
   </gazebo>
 
@@ -270,8 +270,8 @@
           </noise>
         </ray>
         <plugin name="gazebo_ros_lidar_controller" filename="libgazebo_ros_laser.so">
-          <topicName>scan</topicName>
-          <frameName>laser</frameName>
+          <topicName>robot_1/scan</topicName>
+          <frameName>robot_1/laser</frameName>
         </plugin>
       </sensor>
     </gazebo>
@@ -306,27 +306,27 @@
           </noise>
         </ray>
         <plugin name="gazebo_ros_lidar_controller" filename="libgazebo_ros_gpu_laser.so">
-          <topicName>scan</topicName>
-          <frameName>laser</frameName>
+          <topicName>robot_1/scan</topicName>
+          <frameName>robot_1/laser</frameName>
         </plugin>
       </sensor>
     </gazebo>
   </xacro:if>
 
   <!-- Base IMU -->
-  <gazebo reference="robot_2/base_link">
+  <gazebo reference="robot_1/base_link">
     <gravity>true</gravity>
     <sensor name="base_imu" type="imu">
       <always_on>true</always_on>
       <visualize>false</visualize>
       <plugin name="imu_plugin" filename="libgazebo_ros_imu_sensor.so">
-        <topicName>imu/data</topicName>
-        <bodyName>robot_2/base_link</bodyName>
+        <topicName>robot_1/imu/data</topicName>
+        <bodyName>robot_1/base_link</bodyName>
         <updateRateHZ>25.0</updateRateHZ>
         <gaussianNoise>0.001</gaussianNoise>
         <xyzOffset>0 0 0</xyzOffset>
         <rpyOffset>0 0 0</rpyOffset>
-        <frameName>robot_2/base_link</frameName>
+        <frameName>robot_1/base_link</frameName>
         <initialOrientationAsReference>false</initialOrientationAsReference>
       </plugin>
       <pose>0 0 0 0 0 0</pose>
@@ -340,13 +340,13 @@
       <always_on>true</always_on>
       <visualize>false</visualize>
       <plugin name="imu_plugin" filename="libgazebo_ros_imu_sensor.so">
-        <topicName>wrist_imu/data</topicName>
-        <bodyName>link_wrist_yaw</bodyName>
+        <topicName>robot_1/wrist_imu/data</topicName>
+        <bodyName>robot_1/link_wrist_yaw</bodyName>
         <updateRateHZ>25.0</updateRateHZ>
         <gaussianNoise>0.001</gaussianNoise>
         <xyzOffset>0 0 0</xyzOffset>
         <rpyOffset>0 0 0</rpyOffset>
-        <frameName>link_wrist_yaw</frameName>
+        <frameName>robot_1/link_wrist_yaw</frameName>
         <initialOrientationAsReference>false</initialOrientationAsReference>
       </plugin>
       <pose>0 0 0 0 0 0</pose>
@@ -363,7 +363,7 @@
       <minDepth>0.001</minDepth>
   </gazebo>
 
-  <gazebo reference="link_mast">
+  <gazebo reference="robot_1/link_mast">
       <material>Gazebo/Gray</material>
   </gazebo>
 
@@ -414,7 +414,7 @@
       <minDepth>0.001</minDepth>
   </gazebo>
 
-  <gazebo reference="link_arm_l4">
+  <gazebo reference="robot_1/link_arm_l4">
       <mu1 value="100.0"/>
       <mu2 value="200.0"/>
       <kp value="10000000.0" />
@@ -481,7 +481,7 @@
   </transmission>
 
   <!-- Head -->
-  <gazebo reference="link_head">
+  <gazebo reference="robot_1/link_head">
       <mu1 value="100.0"/>
       <mu2 value="200.0"/>
       <material>Gazebo/Gray</material>
@@ -566,7 +566,7 @@
       <material>Gazebo/Gray</material>
       <minDepth>0.001</minDepth>
   </gazebo> 
-  <gazebo reference="link_gripper_fingertip_right">
+  <gazebo reference="robot_1/link_gripper_fingertip_right">
       <mu1 value="100.0"/>
       <mu2 value="200.0"/>
       <kp value="10000000.0" />
@@ -582,7 +582,7 @@
       <material>Gazebo/Gray</material>
       <minDepth>0.001</minDepth>
   </gazebo> 
-  <gazebo reference="link_gripper_fingertip_left">
+  <gazebo reference="robot_1/link_gripper_fingertip_left">
       <mu1 value="100.0"/>
       <mu2 value="200.0"/>
       <kp value="10000000.0" />
