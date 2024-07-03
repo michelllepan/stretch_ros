@@ -7,7 +7,7 @@
   <xacro:property name="joint_spring_reference" value="0"/>
 
   <link
-    name="robot_1/base_link">
+    name="robot_2/base_link">
     <inertial>
       <origin
         xyz="-0.11587 0.0019426 0.093621"
@@ -48,7 +48,7 @@
   </link>
 
   <link
-    name="robot_1/link_right_wheel">
+    name="robot_2/link_right_wheel">
     <inertial>
       <origin
         xyz="1.1719E-11 2.0783E-11 0.037544"
@@ -95,16 +95,16 @@
       xyz="0 -0.17035 0.0508"
       rpy="-1.5708 1.2717E-16 4.8006E-17" />
     <parent
-      link="robot_1/base_link" />
+      link="robot_2/base_link" />
     <child
-      link="robot_1/link_right_wheel" />
+      link="robot_2/link_right_wheel" />
     <axis
       xyz="0 0 1" />
     <dynamics damping="${joint_damping}" friction="${joint_friction}" spring_reference="${joint_spring_reference}" spring_stiffness="${joint_spring_stiffness}"/>
   </joint>
 
   <link
-    name="robot_1/link_left_wheel">
+    name="robot_2/link_left_wheel">
     <inertial>
       <origin
         xyz="-2.0783E-11 -1.1719E-11 -0.037544"
@@ -151,9 +151,9 @@
       xyz="0 0.17035 0.0508"
       rpy="-1.5708 2.6317E-16 -8.2057E-19" />
     <parent
-      link="robot_1/base_link" />
+      link="robot_2/base_link" />
     <child
-      link="robot_1/link_left_wheel" />
+      link="robot_2/link_left_wheel" />
     <axis
       xyz="0 0 1" />
     <dynamics damping="${joint_damping}" friction="${joint_friction}" spring_reference="${joint_spring_reference}" spring_stiffness="${joint_spring_stiffness}"/>
@@ -204,7 +204,7 @@
   </link>
 
   <joint name="caster_joint" type="fixed">
-    <parent link="robot_1/base_link"/>
+    <parent link="robot_2/base_link"/>
     <child link="caster_link"/>
     <origin xyz="-0.245 0.0 0.032" rpy="${-M_PI/2} 0 0"/>
     <axis xyz="0 0 1" />
@@ -258,7 +258,7 @@
       xyz="-0.067 0.135 0.0284"
       rpy="1.5708 0 4.8006E-17" />
     <parent
-      link="robot_1/base_link" />
+      link="robot_2/base_link" />
     <child
       link="link_mast" />
     <axis
@@ -266,7 +266,7 @@
   </joint>
 
   <link
-    name="robot_1/link_lift">
+    name="robot_2/link_lift">
     <inertial>
       <origin
         xyz="-0.031727 0.038403 0.013361"
@@ -315,7 +315,7 @@
     <parent
       link="link_mast" />
     <child
-      link="robot_1/link_lift" />
+      link="robot_2/link_lift" />
     <axis
       xyz="0 0 1" />
   <!-- for now: hand copied range_m: from lift: from ~/repos/stretch_fleet/stretch-re1-1001/stretch_re1_factory_params.yaml -->
@@ -372,7 +372,7 @@
       xyz="-0.2547 0 0"
       rpy="1.5708 2.4721E-15 -1.5708" />
     <parent
-      link="robot_1/link_lift" />
+      link="robot_2/link_lift" />
     <child
       link="link_arm_l4" />
     <axis
@@ -380,7 +380,7 @@
   </joint>
 
   <link
-    name="robot_1/link_arm_l3">
+    name="robot_2/link_arm_l3">
     <inertial>
       <origin
         xyz="-5.13853606326845E-07 -1.99844969271112E-05 -0.0971104963726614"
@@ -429,7 +429,7 @@
     <parent
       link="link_arm_l4" />
     <child
-      link="robot_1/link_arm_l3" />
+      link="robot_2/link_arm_l3" />
     <axis
       xyz="0 0 1" />
     <!-- 0.13 = 0.52/4-->
@@ -437,7 +437,7 @@
   </joint>
 
   <link
-    name="robot_1/link_arm_l2">
+    name="robot_2/link_arm_l2">
     <inertial>
       <origin
         xyz="-5.17421949435687E-07 -2.02045301450349E-05 -0.0968815475684904"
@@ -484,9 +484,9 @@
       xyz="0 0 0.013"
       rpy="0 1.57655765344625E-30 -1.66533453693773E-16" />
     <parent
-      link="robot_1/link_arm_l3" />
+      link="robot_2/link_arm_l3" />
     <child
-      link="robot_1/link_arm_l2" />
+      link="robot_2/link_arm_l2" />
     <axis
       xyz="0 0 1" />
     <!-- 0.13 = 0.52/4-->
@@ -494,7 +494,7 @@
   </joint>
 
   <link
-    name="robot_1/link_arm_l1">
+    name="robot_2/link_arm_l1">
     <inertial>
       <origin
         xyz="-5.257E-07 -2.0482E-05 -0.096543"
@@ -541,9 +541,9 @@
       xyz="0 0 0.0129999999999981"
       rpy="-7.63746778746202E-30 -7.88860905221012E-31 1.11022302462516E-16" />
     <parent
-      link="robot_1/link_arm_l2" />
+      link="robot_2/link_arm_l2" />
     <child
-      link="robot_1/link_arm_l1" />
+      link="robot_2/link_arm_l1" />
     <axis
       xyz="0 0 1" />
     <!-- 0.13 = 0.52/4-->
@@ -551,7 +551,7 @@
   </joint>
 
   <link
-    name="robot_1/link_arm_l0">
+    name="robot_2/link_arm_l0">
     <inertial>
       <origin
         xyz="0.0270582141286185 -0.00189876414654466 -0.0377809018481181"
@@ -598,9 +598,9 @@
       xyz="0 0 -0.0137499999991968"
       rpy="7.63746778746202E-30 -3.80121128864402E-15 2.62707547767438E-15" />
     <parent
-      link="robot_1/link_arm_l1" />
+      link="robot_2/link_arm_l1" />
     <child
-      link="robot_1/link_arm_l0" />
+      link="robot_2/link_arm_l0" />
     <axis
       xyz="0 0 1" />
     <!-- 0.13 = 0.52/4-->
@@ -608,7 +608,7 @@
   </joint>
 
   <link
-    name="robot_1/link_wrist_yaw">
+    name="robot_2/link_wrist_yaw">
     <inertial>
       <origin
         xyz="2.20122392535771E-11 2.9317167880849E-05 -0.018966592644729"
@@ -655,9 +655,9 @@
       xyz="0.0830000000000654 -0.0307500000000129 0"
       rpy="1.5708 4.2595E-14 2.6415E-15"/>
     <parent
-      link="robot_1/link_arm_l0" />
+      link="robot_2/link_arm_l0" />
     <child
-      link="robot_1/link_wrist_yaw" />
+      link="robot_2/link_wrist_yaw" />
     <axis
       xyz="0 0 -1" />
     <!--
@@ -725,7 +725,7 @@
   </joint>
 
   <link
-    name="robot_1/link_head_pan">
+    name="robot_2/link_head_pan">
     <inertial>
       <origin
         xyz="-0.000326562615178591 0.00850012613776489 0.000130487222982367"
@@ -774,7 +774,7 @@
     <parent
       link="link_head" />
     <child
-      link="robot_1/link_head_pan" />
+      link="robot_2/link_head_pan" />
     <axis
       xyz="0 0 1" />
     <!-- unconstrained range for now -->
@@ -782,7 +782,7 @@
   </joint>
 
   <link
-    name="robot_1/link_head_tilt">
+    name="robot_2/link_head_tilt">
     <inertial>
       <origin
         xyz="0.00704566394917504 -0.0212256210929691 0.0302058990060359"
@@ -829,9 +829,9 @@
       xyz="-0.00130000001785262 0.0277624999926072 -0.0533107920897029"
       rpy="1.5707963267949 3.36459255518345E-15 -8.42914893687103E-17" />
     <parent
-      link="robot_1/link_head_pan" />
+      link="robot_2/link_head_pan" />
     <child
-      link="robot_1/link_head_tilt" />
+      link="robot_2/link_head_tilt" />
     <axis
       xyz="0 0 1" />
     <!-- unconstrained range for now -->

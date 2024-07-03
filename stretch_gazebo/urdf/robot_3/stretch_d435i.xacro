@@ -10,7 +10,7 @@
        up and down (- down / + up)
        sideways (- right / + left)
        " -->
-  <xacro:sensor_d435i parent="robot_1/link_head_tilt" use_nominal_extrinsics="$(arg use_nominal_extrinsics)">
+  <xacro:sensor_d435i parent="robot_3/link_head_tilt" use_nominal_extrinsics="$(arg use_nominal_extrinsics)">
     <origin
       xyz="0.03 -0.0122 0.0182"
       rpy="0.0 0.0 0.0" />

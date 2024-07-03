@@ -49,7 +49,7 @@
       xyz="-0.0015028 -0.1304972 0.1597482"
       rpy="0 0 -1.5707963267949" />
     <parent
-      link="robot_1/base_link" />
+      link="robot_3/base_link" />
     <child
       link="link_aruco_right_base" />
     <axis
@@ -105,7 +105,7 @@
       xyz="-0.00500000000000014 0.1304972 0.1597482"
       rpy="0 0 -1.5707963267949" />
     <parent
-      link="robot_1/base_link" />
+      link="robot_3/base_link" />
     <child
       link="link_aruco_left_base" />
     <axis
@@ -160,7 +160,7 @@
       xyz="-0.0133768876375287 0.0558540528812078 0.0861368272417975"
       rpy="-1.53998860117704E-29 3.55962409571165E-15 0.0" />
     <parent
-      link="robot_1/link_lift" />
+      link="robot_3/link_lift" />
     <child
       link="link_aruco_shoulder" />
     <axis
@@ -215,7 +215,7 @@
       xyz="0.0472500000000019 0.0292850000000015 0"
       rpy="1.5707963267949 -8.03728587323464E-15 3.14159265358979" />
     <parent
-      link="robot_1/link_arm_l0" />
+      link="robot_3/link_arm_l0" />
     <child
       link="link_aruco_top_wrist" />
     <axis
@@ -270,7 +270,7 @@
       xyz="0.0472499999999947 -0.0119000000000034 -0.0272499999991938"
       rpy="3.14159265358979 4.23377442363088E-14 3.14159265358979" />
     <parent
-      link="robot_1/link_arm_l0" />
+      link="robot_3/link_arm_l0" />
     <child
       link="link_aruco_inner_wrist" />
     <axis
