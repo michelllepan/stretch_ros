@@ -41,6 +41,11 @@
         <mesh
           filename="package://stretch_description/meshes/link_wrist_yaw_bottom.STL" />
       </geometry>
+      <surface>
+        <contact>
+          <collide_bitmask>0x02</collide_bitmask>
+        </contact>
+      </surface>
     </collision>
   </link>
   <joint
@@ -94,6 +99,11 @@
         <mesh
           filename="package://stretch_description/meshes/link_wrist_pitch.STL" />
       </geometry>
+      <surface>
+        <contact>
+          <collide_bitmask>0x02</collide_bitmask>
+        </contact>
+      </surface>
     </collision>
   </link>
   <joint
@@ -148,6 +158,11 @@
         <mesh
           filename="package://stretch_description/meshes/link_wrist_roll.STL" />
       </geometry>
+      <surface>
+        <contact>
+          <collide_bitmask>0x02</collide_bitmask>
+        </contact>
+      </surface>
     </collision>
   </link>
   <joint
@@ -202,6 +217,11 @@
         <mesh
           filename="package://stretch_description/meshes/link_straight_gripper.STL" />
       </geometry>
+      <surface>
+        <contact>
+          <collide_bitmask>0x02</collide_bitmask>
+        </contact>
+      </surface>
     </collision>
   </link>
   <joint
@@ -255,6 +275,11 @@
         <mesh
           filename="package://stretch_description/meshes/link_gripper_finger_right.STL" />
       </geometry>
+      <surface>
+        <contact>
+          <collide_bitmask>0x02</collide_bitmask>
+        </contact>
+      </surface>
     </collision>
   </link>
   <joint
@@ -309,6 +334,11 @@
         <mesh
           filename="package://stretch_description/meshes/link_gripper_fingertip_right.STL" />
       </geometry>
+      <surface>
+        <contact>
+          <collide_bitmask>0x02</collide_bitmask>
+        </contact>
+      </surface>
     </collision>
   </link>
   <joint
@@ -362,6 +392,11 @@
         <mesh
           filename="package://stretch_description/meshes/link_gripper_finger_left.STL" />
       </geometry>
+      <surface>
+        <contact>
+          <collide_bitmask>0x02</collide_bitmask>
+        </contact>
+      </surface>
     </collision>
   </link>
   <joint
@@ -416,6 +451,11 @@
         <mesh
           filename="package://stretch_description/meshes/link_gripper_fingertip_left.STL" />
       </geometry>
+      <surface>
+        <contact>
+          <collide_bitmask>0x02</collide_bitmask>
+        </contact>
+      </surface>
     </collision>
   </link>
   <joint

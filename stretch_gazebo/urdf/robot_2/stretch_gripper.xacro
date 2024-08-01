@@ -41,6 +41,11 @@
         <mesh
           filename="package://stretch_description/meshes/link_gripper.STL" />
       </geometry>
+      <surface>
+        <contact>
+          <collide_bitmask>0x02</collide_bitmask>
+        </contact>
+      </surface>
     </collision>
   </link>
 
@@ -98,6 +103,11 @@
         <mesh
           filename="package://stretch_description/meshes/link_gripper_finger_left.STL" scale="${scale_finger_length} 1.0 1.0"/>
       </geometry>
+      <surface>
+        <contact>
+          <collide_bitmask>0x02</collide_bitmask>
+        </contact>
+      </surface>
     </collision>
   </link>
   
@@ -154,6 +164,11 @@
         <mesh
           filename="package://stretch_description/meshes/link_gripper_fingertip_left.STL" />
       </geometry>
+      <surface>
+        <contact>
+          <collide_bitmask>0x02</collide_bitmask>
+        </contact>
+      </surface>
     </collision>
   </link>
   
@@ -209,6 +224,11 @@
         <mesh
           filename="package://stretch_description/meshes/link_gripper_finger_right.STL" scale="${scale_finger_length} 1.0 1.0"/>
       </geometry>
+      <surface>
+        <contact>
+          <collide_bitmask>0x02</collide_bitmask>
+        </contact>
+      </surface>
     </collision>
   </link>
   
@@ -265,6 +285,11 @@
         <mesh
           filename="package://stretch_description/meshes/link_gripper_fingertip_right.STL" />
       </geometry>
+      <surface>
+        <contact>
+          <collide_bitmask>0x02</collide_bitmask>
+        </contact>
+      </surface>
     </collision>
   </link>
   

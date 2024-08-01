@@ -44,6 +44,11 @@
         <mesh
           filename="package://stretch_description/meshes/base_link.STL" />
       </geometry>
+      <surface>
+        <contact>
+          <collide_bitmask>0x02</collide_bitmask>
+        </contact>
+      </surface>
     </collision>
   </link>
 
@@ -85,6 +90,11 @@
         <mesh
           filename="package://stretch_description/meshes/link_right_wheel.STL" />
       </geometry>
+      <surface>
+        <contact>
+          <collide_bitmask>0x02</collide_bitmask>
+        </contact>
+      </surface>
     </collision>
   </link>
 
@@ -141,6 +151,11 @@
         <mesh
           filename="package://stretch_description/meshes/link_left_wheel.STL" />
       </geometry>
+      <surface>
+        <contact>
+          <collide_bitmask>0x02</collide_bitmask>
+        </contact>
+      </surface>
     </collision>
   </link>
 
@@ -174,6 +189,9 @@
             <slip2>1.0</slip2>
           </ode>
         </friction>
+        <contact>
+          <collide_bitmask>0x02</collide_bitmask>
+        </contact>
       </surface>
     </collision>
     <visual>
@@ -248,6 +266,11 @@
         <mesh
           filename="package://stretch_description/meshes/link_mast.STL" />
       </geometry>
+      <surface>
+        <contact>
+          <collide_bitmask>0x02</collide_bitmask>
+        </contact>
+      </surface>
     </collision>
   </link>
 
@@ -303,6 +326,11 @@
         <mesh
           filename="package://stretch_description/meshes/link_lift.STL" />
       </geometry>
+      <surface>
+        <contact>
+          <collide_bitmask>0x02</collide_bitmask>
+        </contact>
+      </surface>
     </collision>
   </link>
 
@@ -362,6 +390,11 @@
         <mesh
           filename="package://stretch_description/meshes/link_arm_l4.STL" />
       </geometry>
+      <surface>
+        <contact>
+          <collide_bitmask>0x02</collide_bitmask>
+        </contact>
+      </surface>
     </collision>
   </link>
 
@@ -417,6 +450,11 @@
         <mesh
           filename="package://stretch_description/meshes/link_arm_l3.STL" />
       </geometry>
+      <surface>
+        <contact>
+          <collide_bitmask>0x02</collide_bitmask>
+        </contact>
+      </surface>
     </collision>
   </link>
 
@@ -474,6 +512,11 @@
         <mesh
           filename="package://stretch_description/meshes/link_arm_l2.STL" />
       </geometry>
+      <surface>
+        <contact>
+          <collide_bitmask>0x02</collide_bitmask>
+        </contact>
+      </surface>
     </collision>
   </link>
 
@@ -531,6 +574,11 @@
         <mesh
           filename="package://stretch_description/meshes/link_arm_l1.STL" />
       </geometry>
+      <surface>
+        <contact>
+          <collide_bitmask>0x02</collide_bitmask>
+        </contact>
+      </surface>
     </collision>
   </link>
 
@@ -588,6 +636,11 @@
         <mesh
           filename="package://stretch_description/meshes/link_arm_l0.STL" />
       </geometry>
+      <surface>
+        <contact>
+          <collide_bitmask>0x02</collide_bitmask>
+        </contact>
+      </surface>
     </collision>
   </link>
 
@@ -645,6 +698,11 @@
         <mesh
           filename="package://stretch_description/meshes/link_wrist_yaw.STL" />
       </geometry>
+      <surface>
+        <contact>
+          <collide_bitmask>0x02</collide_bitmask>
+        </contact>
+      </surface>
     </collision>
   </link>
 
@@ -707,6 +765,11 @@
         <mesh
           filename="package://stretch_description/meshes/link_head.STL" />
       </geometry>
+      <surface>
+        <contact>
+          <collide_bitmask>0x02</collide_bitmask>
+        </contact>
+      </surface>
     </collision>
   </link>
 
@@ -762,6 +825,11 @@
         <mesh
           filename="package://stretch_description/meshes/link_head_pan.STL" />
       </geometry>
+      <surface>
+        <contact>
+          <collide_bitmask>0x02</collide_bitmask>
+        </contact>
+      </surface>
     </collision>
   </link>
 
@@ -819,6 +887,11 @@
         <mesh
           filename="package://stretch_description/meshes/link_head_tilt.STL" />
       </geometry>
+      <surface>
+        <contact>
+          <collide_bitmask>0x02</collide_bitmask>
+        </contact>
+      </surface>
     </collision>
   </link>
 

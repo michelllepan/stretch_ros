@@ -270,8 +270,8 @@
           </noise>
         </ray>
         <plugin name="gazebo_ros_lidar_controller" filename="libgazebo_ros_laser.so">
-          <topicName>robot_2/scan</topicName>
-          <frameName>robot_2/laser</frameName>
+          <topicName>scan</topicName>
+          <frameName>laser</frameName>
         </plugin>
       </sensor>
     </gazebo>
@@ -306,8 +306,8 @@
           </noise>
         </ray>
         <plugin name="gazebo_ros_lidar_controller" filename="libgazebo_ros_gpu_laser.so">
-          <topicName>robot_2/scan</topicName>
-          <frameName>robot_2/laser</frameName>
+          <topicName>scan</topicName>
+          <frameName>laser</frameName>
         </plugin>
       </sensor>
     </gazebo>

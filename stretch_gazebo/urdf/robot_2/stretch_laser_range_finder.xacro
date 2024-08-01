@@ -39,6 +39,11 @@
         <mesh
           filename="package://stretch_description/meshes/laser.STL" />
       </geometry>
+      <surface>
+        <contact>
+          <collide_bitmask>0x02</collide_bitmask>
+        </contact>
+      </surface>
     </collision>
   </link>
   

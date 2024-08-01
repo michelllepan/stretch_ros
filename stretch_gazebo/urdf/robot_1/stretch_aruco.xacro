@@ -39,6 +39,11 @@
         <mesh
           filename="package://stretch_description/meshes/link_aruco_right_base.STL" />
       </geometry>
+      <surface>
+        <contact>
+          <collide_bitmask>0x01</collide_bitmask>
+        </contact>
+      </surface>
     </collision>
   </link>
   
@@ -95,6 +100,11 @@
         <mesh
           filename="package://stretch_description/meshes/link_aruco_left_base.STL" />
       </geometry>
+      <surface>
+        <contact>
+          <collide_bitmask>0x01</collide_bitmask>
+        </contact>
+      </surface>
     </collision>
   </link>
   
@@ -150,6 +160,11 @@
         <mesh
           filename="package://stretch_description/meshes/link_aruco_shoulder.STL" />
       </geometry>
+      <surface>
+        <contact>
+          <collide_bitmask>0x01</collide_bitmask>
+        </contact>
+      </surface>
     </collision>
   </link>
 
@@ -205,6 +220,11 @@
         <mesh
           filename="package://stretch_description/meshes/link_aruco_top_wrist.STL" />
       </geometry>
+      <surface>
+        <contact>
+          <collide_bitmask>0x01</collide_bitmask>
+        </contact>
+      </surface>
     </collision>
   </link>
 
@@ -260,6 +280,11 @@
         <mesh
           filename="package://stretch_description/meshes/link_aruco_inner_wrist.STL" />
       </geometry>
+      <surface>
+        <contact>
+          <collide_bitmask>0x01</collide_bitmask>
+        </contact>
+      </surface>
     </collision>
   </link>
 
